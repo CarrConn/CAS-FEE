@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Test</title>
+</head>
+
+<body>
+<h1>Hello World</h1>
+
+<div id="square1"></div>
+<div id="square2"></div>
+<div id="apple"></div>
+
+<script type="text/javascript">
+    var square1 = document.getElementById("square1");
+    square1.style.width = "100px";
+    square1.style.height = "100px";
+    square1.style.borderRadius = "200px";
+    square1.style.backgroundColor ="green";
+
+    var apple = document.getElementById("apple");
+    apple.style.width = "10px";
+    apple.style.height = "10px";
+    apple.style.borderRadius = "200px";
+    apple.style.backgroundColor ="red";
+    apple.style.marginLeft = "30px";
+    apple.style.position = "relative";
+    apple.style.top = "-160px";
+
+
+    var square2 = document.getElementById("square2");
+    square2.style.width = "20px";
+    square2.style.height = "100px";
+    square2.style.backgroundColor = "black";
+    square2.style.marginLeft ="40px";
+
+
+
+    /*
+     // this handler will be executed every time the cursor is moved over a different list item
+     apple.onmouseover=function() {
+     apple.style.backgroundColor = "blue";
+     };
+     */
+    apple.addEventListener("mouseover", function( event ) {
+        // highlight the mouseover target
+        event.target.style.backgroundColor = "blue";
+
+        console.log(event);
+        // reset the color after a short delay
+        setTimeout(function() {
+            event.target.style.backgroundColor = "red";
+        }, 500);
+    });
+
+    var event3 = function(testevent){
+        testevent.target.style.width = "100px";
+        testevent.target.style.height = "100px";
+    }
+
+    apple.addEventListener("mouseover", event3)
+    /*
+     a.addEventListener("mousedown", function(event2){
+     event2.target.style.backgroundColor = "black";
+     },false);
+     */
+</script>
+
+</body>
+</html>
